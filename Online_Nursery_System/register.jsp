@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+	<link rel="shortcut icon" href="images/logo.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.heading {
+			border: 1px solid white;
+			background-color: #79d2a0;
+			padding: 5px; 
+			margin: 10px auto;
+			width: 100%;
+			text-transform: uppercase;
+			color: white;
+		}
+		a {
+			text-decoration: none;
+			color: #79d2a0;
+		}
+		#sub {
+			/*font-weight: 700;*/
+			margin-right: 20px;
+		}
+		#status {
+			margin-left: 20px;
+		}
+		#Atag {
+			text-decoration: none;
+			font-weight: 700;
+			color: 
+		}
+		.modal{
+		    display: block !important; /* I added this to see the modal, you don't need this */
+		}
+
+		/* Important part */
+		.modal-dialog{
+		    overflow-y: initial !important
+		}
+		.modal-body{
+		    height: 250px;
+		    overflow-y: auto;
+		}
+	</style>
+	<script type="text/javascript">
+		function unameCheck() {
+			var xmlhttp;
+			var k = document.getElementById("username").value;
+			var urls = "checkusername.jsp?ver="+k;
+			if(window.XMLHttpRequest){
+				xmlhttp = new XMLHttpRequest();
+			}
+			else {
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function() {
+				if(xmlhttp.readystate == 4){
+					document.getElementById("err").innerHTML = xmlhttp.responseText;
+				}
+			}
+			xmlhttp.open("GET", urls, true);
+			xmlhttp.send();
+		}
+
+	  	$(document).ready(function() {
+	  	$("#MyModal").modal();
+	  	});
+	  	function regvalid(){
+			var num = document.getElementById('numb');
+
+			if(num.length != 10){
+				alert("Enter a valid number");
+			}
+			else{
+				return 1;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h4 class="heading">register account</h4>
+		<p>If you already have an account with us,please <a href="login.jsp">Login</a></p>
+
+		<form action="Register" method="post" autocomplete="off">
+			<h4 class="heading">your personal Details</h4>
+			<div class="form-group">
+				<label>UserName</label>
+				<input class="form-control" onkeyup="unameCheck()" type="text" placeholder="USERNAME" id="username" name="uname" required>
+				<span id="err"></span>
+			</div>
+			<div class="form-row row band">
+				<div class="form-group col-md-6">
+					<label>FirstName</label>
+					<input class="form-control" type="text" placeholder="FIRSTNAME" name="fname" required autocomplete="off">
+				</div>
+				<div class="form-group col-md-6">
+					<label>LastName</label>
+					<input class="form-control" type="text" placeholder="LASTNAME" name="lname"required autocomplete="off">
+				</div>
+			</div>
+			<div class="form-group">
+				<label>E-Mail</label>
+				<input class="form-control" type="email"placeholder="E-MAIL"  name="email" required autocomplete="off">
+			</div>
+			<div class="form-group">
+				<label>Telephone</label>
+				<input class="form-control" type="text" id="numb" placeholder="TELEPHONE" name="teleph" required autocomplete="off">
+			</div>
+
+			<h4 class="heading">your address</h4>
+			<div class="form-group">
+				<label>Address1</label>
+				<input class="form-control" type="text" placeholder="ADDRESS 1" name="addr1" required autocomplete="off">
+			</div>
+			<div class="form-group">
+				<label>Address2</label>
+				<input class="form-control" type="text" placeholder="ADDRESS 2" name="addr2" autocomplete="off">
+			</div>
+			<div class="form-group">
+				<label>City</label>
+				<input class="form-control" type="text" placeholder="CITY" name="city" required autocomplete="off">
+			</div>
+			<div class="form-group">
+				<label>PostalCode</label>
+				<input class="form-control" type="text" placeholder="POSTALCODE" name="pcode" required>
+			</div>
+			<div class="form-group">
+				<label for="sel_dist">District</label>
+				<select class="form-control" name="district" id="sel_dist"required>
+					<option value="" selected disabled>SELECT DISTRICT</option>
+					<option>Ariyalur</option>
+					<option>Chennai</option>
+					<option>Coimbatore</option>
+					<option>Cuddalore</option>
+					<option>Dharmapuri</option>
+					<option>Erode</option>
+					<option>Kanchipuram</option>
+					<option>Madurai</option>
+					<option>Salem</option>
+					<option>Thanjavur</option>
+					<option>Tiruvannamalai</option>
+					<option>Thirunelveli</option>
+				</select>
+
+			<h4 class="heading">your password</h4>
+			<div class="form-group">
+				<label>Password</label>
+				<input class="form-control" type="password" placeholder="PASSWORD" name="pass" required>
+			</div>
+
+			<h4 class="heading">newsleter</h4>
+				<span id="sub">Subscribe</span>
+				<label class="radio-inline" for="choice1">
+					<input type="radio" id="choice1" name="status" value="yes" required>Yes
+				</label>
+				<label class="radio-inline" for="choice2">
+					<input type="radio" id="choice2" name="status" value="no" required>No
+				</label>
+				<span id="status">I have read and agree to the <a href="#themodal" data-toggle="modal" id="Atag">Privacy Policy</a></span>
+				<div class="modal fade"id="themodal" tabindex="-1" role="dialog" aria-labelledby="themodalTitle" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title" id="themodal">PrivacyPolicy</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+
+							<div class="modal-body">
+								<h5>Thanks for reviewing our Privacy Policy</h5>
+								<ul>
+									<li>If any Service requires you to open an account (“My Account”), you must complete the registration process by providing us with current, complete and accurate information as prompted by the applicable registration form.</li>
+									<li>All communication to you will be carried out through the contact details provided by you while opening an account. You are responsible to report any change in your User Account details by writing to us at care@plantsguru.com . The site is not responsible for any changes in User Account details once an order is placed.</li>
+									<li>You are responsible for maintaining the confidentiality of your User Account password and other account details and are entirely responsible for any and all activities that occur under your User Account. In case you suspect or identify any abuse of your User Account or any transaction through your User Account that is not carried out by you, you should immediately notify us in writing at care@plantsguru.com.</li>
+									<li>All information shared by you while creating your User Account or accessing the Site shall be protected in accordance with our Privacy Policy.</li>
+									<li>We are committed to protect all information that you share with us. We have accordingly developed this privacy policy to protect your personal information and keep it confidential. We follow stringent procedures to help protect the confidentiality, security, and integrity of data stored on our systems.</li>
+								</ul>
+								<p>We seek to protect your rights of privacy on systems and the Site (www.plantsguru.com) controlled by us, but we are not liable for any unauthorized or unlawful disclosures of your personal and confidential information made by third parties who are not subject to our control, for example advertisers and websites that have links to our Site. You should take note that the information and privacy practices of our business partners, advertisers, sponsors or other sites to which we provide hyperlinks, may be different from ours.</p>
+								<p>The information we receive and collect depends on what you do when you visit our Site. We may change this privacy policy at any time without notice and by updating this page. Please check this page from time to time to ensure that you are happy with any changes. Here is how we handle information about your visit to our Site.</p>
+								<p>Dear user plants guru will send you sms on mobile number you entered for your update and order privacy, by ageering to this term and condition you wish to recieve sms of your order, shipping, cancellation and paymemt details. Plants Guru will not send you any promotional sms, but if you wish to recieve any promotional offer or wish list update, you can signup for our newsletter, and you can recieve such details by email.</p>
+
+								<p><b>Dear user plants guru do not use your mobile number for any promotions, and only sends you sms update on following events:</b></p>
+								<ul>
+									<li>When you register on plants guru.</li>
+									<li>When you successfuly purchase a product.</li>
+									<li>When you cancell your order.</li>
+									<li>When your order is shipped for delivery.</li>
+									<li>When your payment is refunded.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			<input class="btn btn-outline-dark" type="submit" value="Submit" onsubmit="regvalid()">
+		</form>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+
+<!-- 	<script type="text/javascript">
+		function formvalidation()
+		{
+			var uname = document.reg.uname;
+			var psw = document.reg.pass;
+			var phno = document.reg.teleph;
+			var uzip = document.reg.pcode;
+
+			if(username_valid(uname))
+			{
+				if(phno_valid(uadd))
+				{	 
+					if(allnumeric(uemail))
+					{
+					}	 
+				}
+			}
+
+			function username_valid(uname)
+			{
+				var letters = /^[A-Za-z]+$/;
+				if(uname.value.match(letters))
+				{
+					return true;
+				}
+				else
+				{
+					alert("UserName must have alphabet characters only");
+					uname.focus();
+					return false;
+				}
+			}
+
+			function phno_valid(phno)
+			{
+				var num = '^([0|+[0-9]{1,5})?([7-9][0-9]{9})$';
+				if(phno.value.match(num))
+				{
+					return true;
+				}
+				else 
+				{
+					alert("Not a valid Phone Number");
+					return false;
+				}
+			}
+
+			function allnumeric(uzip)
+			{ 
+				var numbers = /^[0-9]+$/;
+				if(uzip.value.match(numbers))
+				{
+					return true;
+				}
+				else
+				{
+					alert('ZIP code must have numeric characters only');
+					uzip.focus();
+					return false;
+				}
+			}
+		}
+	</script> -->

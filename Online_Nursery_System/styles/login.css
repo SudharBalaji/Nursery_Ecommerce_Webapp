@@ -1,0 +1,32 @@
+body {
+	font-family: 'Rokkitt', serif;
+	background-color: #f0f5f5;
+	margin: 20px auto;
+	padding: 20px;
+	border: 10px solid #bdc3c7;
+	max-width: 500px;
+	width: 80%;
+	position: center;
+}
+h1 {
+	color: teal;
+	border:2px solid mediumseagreen;
+	text-align: center;
+}
+.content {
+	font-size: 25px;
+	text-align: center;
+	margin: 10px auto;
+}
+button {
+	background-color: palegreen;
+	border:0px;
+	font-size: 20px;
+	margin: 8px auto;
+	display: block;
+	font-weight: 550;
+}
+
+span {
+	color: red;
+}

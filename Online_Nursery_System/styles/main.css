@@ -1,0 +1,199 @@
+body {
+	padding-top: 100px;
+	font-weight: 600;
+}
+.navbar-inverse {
+	background: #79d2a0;
+	color: white;
+	font-weight: 700;
+}
+.navbar-inverse .navbar-brand, .navbar-inverse a{
+	color:white;
+}
+.navbar-inverse .navbar-nav>li>a {
+	color: white;
+}
+#cart {
+    margin-top: 20px;
+    padding: 20px;
+}
+.caret.caret-up {
+  border-top-width: 0;
+ border-bottom: 4px solid #fff;
+}
+.hover-zoomin a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+.hover-zoomin img {
+    width: 100%;
+    height: auto;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.hover-zoomin:hover img {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.heading {
+	border: 1px solid white;
+	background-color: #79d2a0;
+	padding: 5px; 
+	margin: 10px auto;
+	width: 100%;
+	text-transform: uppercase;
+	color: white;
+}
+.caption{
+     text-align: center;
+}
+.price {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 5px;
+    margin: 5px auto 10px;
+    text-align: center;
+    /*display: inline-block;*/
+    /*font-weight: 600;*/
+    width:fit-content; 
+    width:-webkit-fit-content; 
+    width:-moz-fit-content;
+}
+
+.fontaws {
+	text-align: center;
+	color: #98FB98;
+	padding: 20px 0px;
+}
+
+.orderlist {
+	margin-left: 40px;
+	margin-right: 20px;
+	padding: 10px;
+	border: 5px solid #000;
+}
+
+.media {
+	position: relative;
+	/*padding: 25px 0px;*/
+}
+
+.media a {
+	text-decoration: none;
+	display: inline-flex;
+	width: 40px;
+	height: 40px;
+	background-color: rgba(143,188,143,0.5);
+	color: #98FB98;
+	margin: 0 6px;
+	border-radius: 50%;
+	justify-content: center;
+	align-items: center;
+	transition: 0.4s;
+	font-size: 23px;
+}
+
+.media a:hover {
+	background-color: #9ACD32;
+}
+
+.full {
+    width: 100%;    
+}
+
+.footer {
+    height: auto;
+    padding-bottom: 30px;
+    position: relative;
+    width: 100%;
+    color:#fff;
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #DDDDDD;
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */     
+}
+
+
+.footer h3 {
+    border-bottom: 1px solid #BAC1C8;
+    color:#fff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    padding: 40px 0 10px;
+    text-transform: uppercase;
+}
+.footer ul {
+    font-size: 13px;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 15px;
+    color: #7F8C8D;
+}
+.footer ul li a {
+    padding: 0 0 5px 0;
+    display: block;
+    text-decoration: none;
+}
+.footer a {
+    color: #78828D;
+    color:#fff;
+}
+.supportLi h4 {
+    font-size: 20px;
+    font-weight: lighter;
+    line-height: normal;
+    margin-bottom: 0 !important;
+    padding-bottom: 0;
+}
+
+.subscribe-btn .btn {
+    border: medium none;
+    border-radius: 4px;
+    display: inline-block;
+    height: 30px;
+    padding: 0;
+    width: 30%;
+    color: #fff;
+    margin-top:10px;
+}
+.subscribe-btn {
+    overflow: hidden;
+}
+.footer-bottom {
+    background: #00bf8f;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #001510, #00bf8f);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #001510, #00bf8f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-top: 1px solid #DDDDDD;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    color:#fff;
+    text-align: center;
+}
+.footer-bottom p.pull-left {
+    padding-top: 6px;
+}
+.payments {
+    font-size: 1.2em;   
+}
+.payments li {
+    /*padding: 2px;*/
+    margin-right: 4px;
+}
+
+.fab {
+    font-size: 1.5em;
+    width: 1em;
+    height: 1.2em;
+    text-align: center;
+    margin: 0 5px;
+}
